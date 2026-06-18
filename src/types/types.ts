@@ -5,3 +5,8 @@ export interface Habit {
     completedDates: string[]
     createdAt: string
 }
+
+export interface InputProps {
+    value: string;
+    handleChangeFunc: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
