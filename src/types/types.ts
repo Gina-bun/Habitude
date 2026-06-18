@@ -9,4 +9,5 @@ export interface Habit {
 export interface InputProps {
     value: string;
     handleChangeFunc: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    checked?:boolean
 }

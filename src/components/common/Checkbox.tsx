@@ -1,10 +1,9 @@
 import type { InputProps } from "../../types/types";
 
-export function Checkbox({ value, handleChangeFunc }: InputProps) {
+export function Checkbox({ value, handleChangeFunc, checked }: InputProps) {
   return (
-    <div className="flex gap-2">
-      <p>{value}</p>
-      <input onChange={handleChangeFunc} type="checkbox" name="" id="" />
+    <div className="f">
+      <input onChange={handleChangeFunc} type="checkbox" name={value} id={value} />
     </div>
   );
 }
