@@ -11,3 +11,4 @@ export interface InputProps {
     handleChangeFunc: (e: React.ChangeEvent<HTMLInputElement>) => void;
     checked?:boolean
 }
+

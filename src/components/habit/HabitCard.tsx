@@ -6,7 +6,7 @@ import { Checkbox } from "../common/Checkbox";
 
 interface HabitCardProps {
     habit: Habit;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     onToggle: (habit: Habit) => void;
     onEdit: (habit: Habit, newTitle: string) => void;
     onDelete: (habit: Habit) => void;
