@@ -37,7 +37,7 @@ export function HabitForm({ addHabit }) {
         </div>
 
       </fieldset>
-       <div className="buttons pt-2 flex gap-3 justify-end w-[70%] mx-auto">
+       <div className="buttons w-[70%]">
              <Button color="bg-orange-200" type="submit" btnText="Add Habit"  />
              <Button color="bg-rose-200" type="button" btnText="Cancel"/>
        </div>

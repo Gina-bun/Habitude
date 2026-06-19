@@ -1,3 +1,4 @@
+import { PencilIcon, TrashIcon } from "@phosphor-icons/react";
 import type { Habit } from "../../types/types";
 import { calculateStreak } from "../../utils/calculateStreak";
 import { isCompletedToday } from "../../utils/isCompletedToday";
@@ -18,15 +19,17 @@ export function HabitCard({habit, children, onToggle, onEdit, onDelete}: HabitCa
     const streak = calculateStreak(habit);
 
     return (
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2 mx-5 mt-2">
         <Checkbox value={habit.title} handleChangeFunc={() => onToggle(habit)} checked={completed}/>
-        <div>
+        <div className="w-screen rounded-md bg-orange-100 pt-2 pl-4">
             {children}
             <div>
-                <p>{habit.title}</p>
-                <p>Streak for {streak} {habit.frequency === "daily" ? "days" : "weeks"}</p>
-                <Button type="button" btnText="Edit" handleClickFunc={() => onEdit(habit, "new title")} />
-                <Button type="button" btnText="Delete" handleClickFunc={() => onDelete(habit)} />    
+                <h2 className="font-medium">{habit.title}</h2>
+                <p className="text-sm font-light">Streak for {streak} {habit.frequency === "daily" ? "days" : "weeks"}</p>
+               <div className="buttons pr-4 pb-4">
+                 <Button type="button" btnText={<PencilIcon size={17} />} handleClickFunc={() => onEdit(habit, "new title")} />
+                <Button type="button" btnText={<TrashIcon size={17} />} handleClickFunc={() => onDelete(habit)} />    
+               </div>
             </div>
         </div>
         </div>

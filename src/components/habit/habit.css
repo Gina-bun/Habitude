@@ -8,3 +8,7 @@
 @utility option{
     @apply bg-white [aria-selected=true]:bg-red-200;
 }
+
+@utility buttons{
+    @apply pt-2 flex gap-3 justify-end  mx-auto
+}
