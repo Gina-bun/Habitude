@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* styles for 'add habit' form */
+@utility form-group{
+    @apply pt-1.5;
+}
+
+@utility option{
+    @apply bg-white [aria-selected=true]:bg-red-200;
+}

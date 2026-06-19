@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "../common/Button";
 import { Input } from "../common/Input";
 import { Select } from "../common/Select";
+import "./habit.css"
 
 export function HabitForm({ addHabit }) {
   const [title, setTitle] = useState<string>("");
@@ -16,9 +17,9 @@ export function HabitForm({ addHabit }) {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <fieldset>
-        <legend>Create a habit</legend>
+    <form className="border rounded-md mx-5 pb-3" onSubmit={(e) => handleSubmit(e)}>
+      <fieldset >
+        <legend className="text-center w-full bg-indigo-500 py-1 rounded-t-md font-medium">Add a new habit</legend>
 
         <div className="form-group">
           <Input labelText="Habit title" value={title} handleChangeFunc={(e) => {setTitle(e.target.value)}}/>
@@ -30,13 +31,16 @@ export function HabitForm({ addHabit }) {
             name="frequency" 
             handleChangeFunc={(e) => setFrequency(e.target.value)}
             >
-                <option value="daily">daily</option>
-                <option value="weekly">weekly</option>
+                <option className="option" value="daily">daily</option>
+                <option className="option" value="weekly">weekly</option>
             </Select>    
         </div>
 
       </fieldset>
-      <Button type="submit" btnText="Add Habit"  />
+       <div className="buttons pt-2 flex gap-3 justify-end w-[70%] mx-auto">
+             <Button color="bg-orange-200" type="submit" btnText="Add Habit"  />
+             <Button color="bg-rose-200" type="button" btnText="Cancel"/>
+       </div>
     </form>
   );
 }
