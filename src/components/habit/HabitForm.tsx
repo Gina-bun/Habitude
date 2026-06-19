@@ -4,7 +4,7 @@ import { Input } from "../common/Input";
 import { Select } from "../common/Select";
 import "./habit.css"
 
-export function HabitForm({ addHabit }) {
+export function HabitForm({ addHabit, onClose }) {
   const [title, setTitle] = useState<string>("");
   const [frequency, setFrequency] = useState<string>("daily");
 
@@ -14,10 +14,12 @@ export function HabitForm({ addHabit }) {
     addHabit(title, frequency);
     setTitle("");
     setFrequency("daily");
+    onClose();
   }
 
   return (
-    <form className="border rounded-md pb-3" onSubmit={(e) => handleSubmit(e)}>
+   <div className="fixed z-10 inset-0 bg-black/50 flex items-center justify-center">
+     <form className="border rounded-md pb-3 bg-orange-100 w-[90%]" onSubmit={(e) => handleSubmit(e)}>
       <fieldset >
         <legend className="text-center w-full bg-indigo-500 py-1 rounded-t-md font-medium">Add a new habit</legend>
 
@@ -39,8 +41,9 @@ export function HabitForm({ addHabit }) {
       </fieldset>
        <div className="buttons w-[70%]">
              <Button color="bg-orange-200" type="submit" btnText="Add Habit"  />
-             <Button color="bg-rose-200" type="button" btnText="Cancel"/>
+             <Button type="button" handleClickFunc={onClose} color="bg-rose-200" type="button" btnText="Cancel"/>
        </div>
     </form>
+   </div>
   );
 }

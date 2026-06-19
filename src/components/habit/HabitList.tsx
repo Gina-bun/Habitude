@@ -53,6 +53,7 @@ export function HabitList({ habits, onToggle, onEdit, onDelete }: HabitList) {
 
   return (
     <div className="mt-4 flex flex-col gap-2">
+        
       {/* Display habits per frequency type */}
 
       {/* Daily habits */}
