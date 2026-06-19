@@ -7,6 +7,7 @@ export interface Habit {
 }
 
 export interface InputProps {
+    labelText: string;
     value: string;
     handleChangeFunc: (e: React.ChangeEvent<HTMLInputElement>) => void;
     checked?:boolean
