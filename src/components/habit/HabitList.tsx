@@ -20,7 +20,7 @@ export function HabitList({ habits, onToggle, onEdit, onDelete }: HabitList) {
   const dailyList = habits.map(
     (habit) =>
       habit.frequency === "daily" && (
-        <div>
+    
           <HabitCard
             key={habit.id}
             habit={habit}
@@ -28,14 +28,14 @@ export function HabitList({ habits, onToggle, onEdit, onDelete }: HabitList) {
             onDelete={onDelete}
             onEdit={onEdit}
           />
-        </div>
+        
       ),
   );
 
   const weeklyList = habits.map(
     (habit) =>
       habit.frequency === "weekly" && (
-        <div>
+        
           <HabitCard
             key={habit.id}
             habit={habit}
@@ -43,7 +43,7 @@ export function HabitList({ habits, onToggle, onEdit, onDelete }: HabitList) {
             onDelete={onDelete}
             onEdit={onEdit}
           />
-        </div>
+        
       ),
   );
 
