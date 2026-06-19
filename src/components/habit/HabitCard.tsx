@@ -19,7 +19,7 @@ export function HabitCard({habit, children, onToggle, onEdit, onDelete}: HabitCa
     const streak = calculateStreak(habit);
 
     return (
-        <div className="flex items-center gap-2 mt-2">
+        <div className="flex items-center gap-2 mt-.5">
         <Checkbox value={habit.title} handleChangeFunc={() => onToggle(habit)} checked={completed}/>
         <div className="w-screen rounded-md bg-orange-100 pt-2 pl-4">
             {children}

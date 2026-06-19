@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* styles for 'add habit' form */
+/* HABIT FORM styles*/
 @layer base{
     h3{
         font-size: 2.5rem;
@@ -23,3 +23,8 @@
     @apply border flex-1 p-2 flex flex-col items-center text-center;
 }
 
+
+/* HABIT LIST styles */
+@utility list-category{
+    @apply font-medium pl-8.5 text-lg;
+}
