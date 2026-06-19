@@ -17,7 +17,7 @@ export function HabitForm({ addHabit }) {
   }
 
   return (
-    <form className="border rounded-md mx-5 pb-3" onSubmit={(e) => handleSubmit(e)}>
+    <form className="border rounded-md pb-3" onSubmit={(e) => handleSubmit(e)}>
       <fieldset >
         <legend className="text-center w-full bg-indigo-500 py-1 rounded-t-md font-medium">Add a new habit</legend>
 

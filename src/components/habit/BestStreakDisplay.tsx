@@ -1,6 +1,7 @@
 import type { Habit } from "../../types/types";
 import type { Icon } from "@phosphor-icons/react";
 import { calculateStreak } from "../../utils/calculateStreak";
+import "./habit.css"
 
 interface BestStreakDisplayProps {
   habits: Habit[];
@@ -16,9 +17,9 @@ export function BestStreakDisplay({ habits, dailyIcon, weeklyIcon }: BestStreakD
   const bestWeeklyStreak = Math.max(...weeklyHabits.map(calculateStreak));
 
   return (
-    <div>
+    <div className="flex rounded-md bg-purple-100 p-2 gap-2">
         {/*for daily habits */}
-      <div className="daily">
+      <div className="daily streak-card rounded-l-md">
         {dailyIcon}
         {
             dailyHabits.length > 0 ?
@@ -37,7 +38,7 @@ export function BestStreakDisplay({ habits, dailyIcon, weeklyIcon }: BestStreakD
        
       </div>
       {/* for weekly habits */}
-      <div className="weekly">
+      <div className="weekly streak-card rounded-r-md">
         {weeklyIcon}
          {
             weeklyHabits.length > 0 ?

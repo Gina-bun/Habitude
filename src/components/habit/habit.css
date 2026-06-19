@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 /* styles for 'add habit' form */
+@layer base{
+    h3{
+        font-size: 2.5rem;
+    }
+}
+
 @utility form-group{
     @apply pt-1.5;
 }
@@ -12,3 +18,8 @@
 @utility buttons{
     @apply pt-2 flex gap-3 justify-end  mx-auto
 }
+
+@utility streak-card{
+    @apply border flex-1 p-2 flex flex-col items-center text-center;
+}
+
