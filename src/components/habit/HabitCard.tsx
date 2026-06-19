@@ -25,8 +25,8 @@ export function HabitCard({habit, children, onToggle, onEdit, onDelete}: HabitCa
             <div>
                 <p>{habit.title}</p>
                 <p>Streak for {streak} {habit.frequency === "daily" ? "days" : "weeks"}</p>
-                <Button btnText="Edit" handleClickFunc={() => onEdit(habit, "new title")} />
-                <Button btnText="Delete" handleClickFunc={() => onDelete(habit)} />    
+                <Button type="button" btnText="Edit" handleClickFunc={() => onEdit(habit, "new title")} />
+                <Button type="button" btnText="Delete" handleClickFunc={() => onDelete(habit)} />    
             </div>
         </div>
         </div>

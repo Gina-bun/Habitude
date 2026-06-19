@@ -1,15 +1,15 @@
 export interface Habit {
-    id: string
-    title: string
-    frequency: 'daily' | 'weekly'
-    completedDates: string[]
-    createdAt: string
+    id: string;
+    title: string;
+    frequency: 'daily' | 'weekly';
+    completedDates: string[];
+    createdAt: string;
 }
 
 export interface InputProps {
-    labelText: string;
+    labelText?: string;
     value: string;
     handleChangeFunc: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    checked?:boolean
+    checked?:boolean;
 }
 

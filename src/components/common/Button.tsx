@@ -1,12 +1,13 @@
 interface ButtonProps {
   btnText: string;
-  type: "submit" | "button" |"reset";
+  type?: "submit" | "button" |"reset";
+  handleClickFunc?: () => void;
 }
 
-export function Button({ btnText, type }: ButtonProps) {
+export function Button({ btnText, handleClickFunc, type }: ButtonProps) {
   return (
      <>
-       <button type={type}>{btnText}</button>;
+       <button type={type} onClick={handleClickFunc}>{btnText}</button>;
      </>
   )
 }
