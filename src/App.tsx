@@ -7,10 +7,13 @@ import { HabitList } from './components/habit/HabitList'
 import useHabits from './hooks/useHabits'
 import { useState } from 'react'
 import { Button } from './components/common/Button'
+import type { Habit } from './types/types'
+import { EditHabitForm } from './components/habit/EditHabitForm'
 
 function App() {
 
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [editingHabit, setEditingHabit] = useState<Habit | null>(null);
   const {habits, addHabit, toggleHabitDone, editHabit, deleteHabit} = useHabits()
 
   return (
@@ -19,9 +22,10 @@ function App() {
       <BestStreakDisplay habits={habits} dailyIcon={<CloudSunIcon size={32} />} weeklyIcon={<PlanetIcon size={32} />}/>
 
       {isFormOpen &&  <HabitForm addHabit={addHabit} onClose={() => setIsFormOpen(false)}/>}
+      {editingHabit && <EditHabitForm habit={editingHabit} onSave={editHabit} onClose={() => setEditingHabit(null)}/>}  
       {/* button to open a form and add a habit */}
       <Button handleClickFunc={() => setIsFormOpen(true)} color="bg-pink-300" type="button" btnText="Add new habit"/>
-      <HabitList habits={habits} onToggle={toggleHabitDone} onEdit={editHabit} onDelete={deleteHabit}/>
+      <HabitList habits={habits} onToggle={toggleHabitDone} onEditClick={(habit) => setEditingHabit(habit)} onDelete={deleteHabit}/>
       
     </>
   )

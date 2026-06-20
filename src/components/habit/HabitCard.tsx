@@ -9,12 +9,12 @@ interface HabitCardProps {
     habit: Habit;
     children?: React.ReactNode;
     onToggle: (habit: Habit) => void;
-    onEdit: (habit: Habit, newTitle: string) => void;
+    onEditClick: (habit: Habit) => void;
     onDelete: (habit: Habit) => void;
 
 }
 
-export function HabitCard({habit, children, onToggle, onEdit, onDelete}: HabitCardProps){
+export function HabitCard({habit, children, onToggle, onEditClick, onDelete}: HabitCardProps){
     const completed = isCompletedToday(habit);
     const streak = calculateStreak(habit);
 
@@ -27,7 +27,7 @@ export function HabitCard({habit, children, onToggle, onEdit, onDelete}: HabitCa
                 <h2 className="font-medium">{habit.title}</h2>
                 <p className="text-sm font-light">Streak for {streak} {habit.frequency === "daily" ? "days" : "weeks"}</p>
                <div className="buttons pr-4 pb-4">
-                 <Button type="button" btnText={<PencilIcon size={17} />} handleClickFunc={() => onEdit(habit, "new title")} />
+                 <Button type="button" btnText={<PencilIcon size={17} />} handleClickFunc={() => onEditClick(habit)} />
                 <Button type="button" btnText={<TrashIcon size={17} />} handleClickFunc={() => onDelete(habit)} />    
                </div>
             </div>

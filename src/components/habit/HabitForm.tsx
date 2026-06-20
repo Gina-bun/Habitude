@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../common/Button";
 import { Input } from "../common/Input";
 import { Select } from "../common/Select";
@@ -41,7 +41,7 @@ export function HabitForm({ addHabit, onClose }) {
       </fieldset>
        <div className="buttons w-[70%]">
              <Button color="bg-orange-200" type="submit" btnText="Add Habit"  />
-             <Button type="button" handleClickFunc={onClose} color="bg-rose-200" type="button" btnText="Cancel"/>
+             <Button type="button" handleClickFunc={onClose} color="bg-rose-200" btnText="Cancel"/>
        </div>
     </form>
    </div>

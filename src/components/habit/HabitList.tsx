@@ -2,14 +2,14 @@ import type { Habit } from "../../types/types";
 import { HabitCard } from "./HabitCard";
 import "./habit.css";
 
-interface HabitList {
+interface HabitListProps {
   habits: Habit[];
   onToggle: (habit: Habit) => void;
-  onEdit: (habit: Habit, newTitle: string) => void;
+  onEditClick: (habit: Habit) => void;
   onDelete: (Habit: Habit) => void;
 }
 
-export function HabitList({ habits, onToggle, onEdit, onDelete }: HabitList) {
+export function HabitList({ habits, onToggle, onEditClick, onDelete }: HabitListProps) {
   const weeklyHabits: Habit[] = habits.filter(
     (habit) => habit.frequency === "weekly",
   );
@@ -26,7 +26,7 @@ export function HabitList({ habits, onToggle, onEdit, onDelete }: HabitList) {
             habit={habit}
             onToggle={onToggle}
             onDelete={onDelete}
-            onEdit={onEdit}
+            onEditClick={onEditClick}
           />
         
       ),
@@ -41,7 +41,7 @@ export function HabitList({ habits, onToggle, onEdit, onDelete }: HabitList) {
             habit={habit}
             onToggle={onToggle}
             onDelete={onDelete}
-            onEdit={onEdit}
+            onEditClick={onEditClick}
           />
         
       ),
