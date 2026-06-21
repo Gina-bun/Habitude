@@ -48,11 +48,17 @@ export function HabitList({ habits, onToggle, onEditClick, onDelete }: HabitList
   );
 
   if (habits.length === 0) {
-    return <p>No habits yet. Add one to get started.</p>;
+    return (
+       <>
+       <h1 className="text-center font-medium text-lg mt-4">Habit list</h1>
+      <p className="text-center text-lg">No habits yet. Add one to get started.</p>
+       </>
+    )
   }
 
   return (
-    <div className="mt-4 flex flex-col gap-2">
+    <div className="container flex flex-col gap-2">
+      <h1 className="text-center font-medium text-lg -mb-2">Habit list</h1>
         
       {/* Display habits per frequency type */}
 

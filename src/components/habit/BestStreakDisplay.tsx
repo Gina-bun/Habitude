@@ -17,7 +17,7 @@ export function BestStreakDisplay({ habits, dailyIcon, weeklyIcon }: BestStreakD
   const bestWeeklyStreak = Math.max(...weeklyHabits.map(calculateStreak));
 
   return (
-    <div className="flex rounded-md bg-purple-100 p-2 gap-2">
+    <div className="container flex rounded-md bg-purple-100 p-2 gap-2">
         {/*for daily habits */}
       <div className="daily lined-card rounded-l-md">
         {dailyIcon}

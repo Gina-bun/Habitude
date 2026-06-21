@@ -6,7 +6,7 @@ import "./habit.css"
 export function AddHabitCard({onAddHabit}){
 
     return (
-        <div className="bg-pink-200 p-2 rounded-md">
+        <div className="container bg-pink-200 p-2 rounded-md">
          <div className="dashed-card flex flex-col items-center p-3 gap-1">
             <h3>Add a new weekly or daily habit</h3>
             <HandPointingIcon size={33} className="rotate-90 animate-bounce-slow" />

@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* general styles */
+@utility container{
+    @apply mt-4;
+}
+
 /* HABIT FORM styles*/
 @layer base{
     h2{
@@ -27,7 +32,7 @@
 
 /* HABIT LIST styles */
 @utility list-category{
-    @apply font-medium pl-8.5 text-lg;
+    @apply pl-8.5 text-lg;
 }
 
 /* in streak card */

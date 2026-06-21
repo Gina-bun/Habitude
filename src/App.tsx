@@ -6,10 +6,11 @@ import { HabitForm } from './components/habit/HabitForm'
 import { HabitList } from './components/habit/HabitList'
 import useHabits from './hooks/useHabits'
 import { useState } from 'react'
-import { Button } from './components/common/Button'
 import type { Habit } from './types/types'
 import { EditHabitForm } from './components/habit/EditHabitForm'
 import { AddHabitCard } from './components/habit/AddHabitCard'
+import "@fontsource/chelsea-market"; // Defaults to weight 400
+
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <>
-    <h1 className='text-center py-2 text-lg font-light'>Habitude</h1>
+    <h1 className='logo font-["Chelsea_Market"] text-center py-2 pt-3 text-xl font-light text-indigo-700'>Habitude</h1>
       <BestStreakDisplay habits={habits} dailyIcon={<CloudSunIcon size={32} />} weeklyIcon={<PlanetIcon size={32} />}/>
 
       {isFormOpen &&  <HabitForm addHabit={addHabit} onClose={() => setIsFormOpen(false)}/>}

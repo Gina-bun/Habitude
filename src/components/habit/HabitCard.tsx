@@ -24,7 +24,7 @@ export function HabitCard({habit, children, onToggle, onEditClick, onDelete}: Ha
         <div className="w-screen rounded-md bg-orange-100 pt-2 pl-4">
             {children}
             <div>
-                <h2 className="font-medium">{habit.title}</h2>
+                <h3 className="font-medium">{habit.title}</h3>
                 <p className="text-sm font-light">Streak for {streak} {habit.frequency === "daily" ? "days" : "weeks"}</p>
                <div className="buttons pr-4 pb-4">
                  <Button type="button" btnText={<PencilIcon size={17} />} handleClickFunc={() => onEditClick(habit)} />
