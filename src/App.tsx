@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { Button } from './components/common/Button'
 import type { Habit } from './types/types'
 import { EditHabitForm } from './components/habit/EditHabitForm'
+import { AddHabitCard } from './components/habit/AddHabitCard'
 
 function App() {
 
@@ -23,8 +24,7 @@ function App() {
 
       {isFormOpen &&  <HabitForm addHabit={addHabit} onClose={() => setIsFormOpen(false)}/>}
       {editingHabit && <EditHabitForm habit={editingHabit} onSave={editHabit} onClose={() => setEditingHabit(null)}/>}  
-      {/* button to open a form and add a habit */}
-      <Button handleClickFunc={() => setIsFormOpen(true)} color="bg-pink-300" type="button" btnText="Add new habit"/>
+      <AddHabitCard onAddHabit={() => setIsFormOpen(true)}/>
       <HabitList habits={habits} onToggle={toggleHabitDone} onEditClick={(habit) => setEditingHabit(habit)} onDelete={deleteHabit}/>
       
     </>

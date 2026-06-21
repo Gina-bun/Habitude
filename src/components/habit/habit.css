@@ -2,8 +2,12 @@
 
 /* HABIT FORM styles*/
 @layer base{
-    h3{
+    h2{
         font-size: 2.5rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
     }
 }
 
@@ -19,12 +23,34 @@
     @apply pt-2 flex gap-3 justify-end  mx-auto
 }
 
-@utility streak-card{
-    @apply border flex-1 p-2 flex flex-col items-center text-center;
-}
 
 
 /* HABIT LIST styles */
 @utility list-category{
     @apply font-medium pl-8.5 text-lg;
+}
+
+/* in streak card */
+@utility lined-card{
+    @apply border flex-1 p-2 flex flex-col items-center text-center;
+}
+
+/* in add habit card */
+@utility dashed-card{
+    @apply border border-dashed rounded-md;
+}
+
+/* styles for AddHabitCard comp */
+@layer utilities {
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateX(0) rotate(90deg);
+    }
+    50% {
+      transform: translateX(6px) rotate(90deg);
+    }
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 1.8s ease-in-out infinite;
+  }
 }

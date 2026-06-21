@@ -19,17 +19,17 @@ export function BestStreakDisplay({ habits, dailyIcon, weeklyIcon }: BestStreakD
   return (
     <div className="flex rounded-md bg-purple-100 p-2 gap-2">
         {/*for daily habits */}
-      <div className="daily streak-card rounded-l-md">
+      <div className="daily lined-card rounded-l-md">
         {dailyIcon}
         {
             dailyHabits.length > 0 ?
             <div>
-            <h3>{bestDailyStreak}</h3>
+            <h2>{bestDailyStreak}</h2>
                 <p>Best Daily streak</p>
             </div>
             :
              <div>
-                <h3>0</h3>
+                <h2>0</h2>
                 <p>No daily habits</p>
             </div>
 
@@ -38,17 +38,17 @@ export function BestStreakDisplay({ habits, dailyIcon, weeklyIcon }: BestStreakD
        
       </div>
       {/* for weekly habits */}
-      <div className="weekly streak-card rounded-r-md">
+      <div className="weekly lined-card rounded-r-md">
         {weeklyIcon}
          {
             weeklyHabits.length > 0 ?
             <div>
-            <h3>{bestWeeklyStreak}</h3>
+            <h2>{bestWeeklyStreak}</h2>
                 <p>Best Weekly streak</p>
             </div>
             :
              <div>
-                <h3>0</h3>
+                <h2>0</h2>
                 <p>No weekly habits</p>
             </div>
 
