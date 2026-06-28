@@ -2,8 +2,11 @@ import { HandPointingIcon } from "@phosphor-icons/react";
 import { Button } from "../common/Button";
 import "./habit.css"
 
+interface AddHabitCardProps {
+    onAddHabit: () => void;
+}
 
-export function AddHabitCard({onAddHabit}){
+export function AddHabitCard({onAddHabit}: AddHabitCardProps){
 
     return (
         <div className="container bg-pink-200 p-2 rounded-md">

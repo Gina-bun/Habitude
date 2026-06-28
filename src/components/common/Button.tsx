@@ -1,7 +1,6 @@
-import type { Icon } from "@phosphor-icons/react";
 
 interface ButtonProps {
-  btnText: string | Icon | Element;
+  btnText: string | React.ReactNode;
   type?: "submit" | "button" |"reset";
   handleClickFunc?: () => void;
   color?: string;

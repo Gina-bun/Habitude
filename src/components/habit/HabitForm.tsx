@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "../common/Button";
 import { Input } from "../common/Input";
 import { Select } from "../common/Select";
 import "./habit.css"
 
-export function HabitForm({ addHabit, onClose }) {
-  const [title, setTitle] = useState<string>("");
-  const [frequency, setFrequency] = useState<string>("daily");
+interface HabitFormProps {
+  addHabit: (title: string, frequency: "daily" | "weekly") => void;
+  onClose: () => void;
+}
 
-  function handleSubmit(e) {
+export function HabitForm({ addHabit, onClose }: HabitFormProps) {
+  const [title, setTitle] = useState<string>("");
+  const [frequency, setFrequency] = useState<"daily" | "weekly">("daily");
+
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if(title.trim() === "") return;
     addHabit(title, frequency);
@@ -31,7 +36,7 @@ export function HabitForm({ addHabit, onClose }) {
             <Select 
             text="Select the habit frequency" 
             name="frequency" 
-            handleChangeFunc={(e) => setFrequency(e.target.value)}
+            handleChangeFunc={(e) => setFrequency(e.target.value as "daily" | "weekly")}
             >
                 <option className="option" value="daily">daily</option>
                 <option className="option" value="weekly">weekly</option>

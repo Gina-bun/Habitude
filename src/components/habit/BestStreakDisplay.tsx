@@ -1,12 +1,11 @@
 import type { Habit } from "../../types/types";
-import type { Icon } from "@phosphor-icons/react";
 import { calculateStreak } from "../../utils/calculateStreak";
 import "./habit.css"
 
 interface BestStreakDisplayProps {
   habits: Habit[];
-  dailyIcon: Icon;
-  weeklyIcon: Icon;
+  dailyIcon: React.ReactNode;
+  weeklyIcon: React.ReactNode;
 }
 
 export function BestStreakDisplay({ habits, dailyIcon, weeklyIcon }: BestStreakDisplayProps) {

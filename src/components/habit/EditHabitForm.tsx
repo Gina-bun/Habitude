@@ -12,7 +12,7 @@ interface EditHabitFormProps {
 export function EditHabitForm({ habit, onSave, onClose }: EditHabitFormProps) {
   const [title, setTitle] = useState<string>(habit.title);
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (title.trim() === "") return;
     onSave(habit, title);
